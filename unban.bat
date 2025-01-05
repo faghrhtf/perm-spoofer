@@ -18,7 +18,6 @@ for /f "delims=" %%i in ('call randstr.bat 10') do set "output92=%%i"
 set currentDir=%~dp0
 cd "%currentDir%AMI"
 
-AMIDEWINx64.EXE /IVN "AMI"
 AMIDEWINx64.EXE /SM "System manufacturer"
 AMIDEWINx64.EXE /SP "System product name"
 AMIDEWINx64.EXE /SV "System version"
