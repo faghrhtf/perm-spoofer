@@ -43,29 +43,6 @@ AMIDEWINx64.EXE /CSK "SKU123"
 AMIDEWINx64.EXE /PSN "Serial-123456"
 AMIDEWINx64.EXE /PAT "Asset-Tag123"
 AMIDEWINx64.EXE /PPN "Product-Name123"
-AMIDEWINx64.EXE /SM "System manufacturer"
-AMIDEWINx64.EXE /SP "System product name"
-AMIDEWINx64.EXE /SV "System version"
-AMIDEWINx64.EXE /SS %output9%
-AMIDEWINx64.EXE /SU AUTO
-AMIDEWINx64.EXE /SK "To Be Filled By O.E.M"
-AMIDEWINx64.EXE /SF "To Be Filled By O.E.M."
-AMIDEWINx64.EXE /BM "ASRock"
-AMIDEWINx64.EXE /BP "B560M-C"
-AMIDEWINx64.EXE /BV " "
-AMIDEWINx64.EXE /BS %output91%
-AMIDEWINx64.EXE /BT "Default string"
-AMIDEWINx64.EXE /BLC "Default string"
-AMIDEWINx64.EXE /CM "Default string"
-AMIDEWINx64.EXE /CV "Default string"
-AMIDEWINx64.EXE /CS %output92%
-AMIDEWINx64.EXE /CA "Default string"
-AMIDEWINx64.EXE /CSK "SKU"
-AMIDEWINx64.EXE /PSN "To Be Filled By O.E.M."
-AMIDEWINx64.EXE /PAT "To Be Filled By O.E.M."
-AMIDEWINx64.EXE /PPN "To Be Filled By O.E.M."
-AFUWINx64.exe BIOS.rom /o
-AFUWINx64.exe BIOS.rom /p
 
 echo AMIDEWIN Spoofed!
 
@@ -78,22 +55,9 @@ cd VOLUME
 for %%d in (C D E F G H) do (
     for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "volID1=%%i"
     for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "volID2=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output3=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output31=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output32=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output33=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output34=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output35=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output36=%%i"
-for /f "delims=" %%i in ('call randstr.bat 4 /v') do set "output37=%%i"
     Volumeid64.exe %%d: %volID1%-%volID2% /accepteula
     echo Serial for drive %%d: changed to %volID1%-%volID2%.
 )
-
-Volumeid64.exe C: %output3%-%output31% /accepteula
-Volumeid64.exe D: %output32%-%output33% /accepteula
-Volumeid64.exe E: %output34%-%output35% /accepteula
-Volumeid64.exe F: %output36%-%output37% /accepteula
 
 echo Disk Serial Numbers Spoofed!
 
